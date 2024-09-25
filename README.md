@@ -8,3 +8,8 @@
 3. komponenty:
 - search bar: miasto /autocomplete
 - wyświetlenie pogody
+
+## Tech stack:
+- React Js
+- Rest API
+- Eslint
