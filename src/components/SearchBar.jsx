@@ -1,7 +1,14 @@
 import React from "react";
+import Search from "./Search";
+import Autocomplete from "./Autocomplete";
 
 function SearchBar() {
-  return <div>Search bar</div>;
+  return (
+    <>
+      <Search />
+      <Autocomplete />
+    </>
+  );
 }
 
 export default SearchBar;
