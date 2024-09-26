@@ -1,0 +1,30 @@
+.search {
+    position: relative;
+
+    &__lbl {
+        color: rgba(255, 255, 255, 0.7);
+        background-color: rgb(0, 30, 60);
+        position: absolute;
+        top: toRem(20px);
+        left: toRem(20px);
+        font-size: toRem(16px);
+        transition: all 400ms;
+        padding: toRem(2px) toRem(6px);
+    }
+
+    &:hover,
+    &.focus {
+        .search__lbl {
+            font-size: toRem(8px);
+            top: toRem(4px);
+        }
+    }
+
+    &__input {
+        padding: toRem(9px);
+        border-radius: toRem(4px);
+        border: toRem(1px) solid rgba(255, 255, 255, 0.23);
+        background-color: rgb(0, 30, 60);
+        margin: toRem(10px);
+    }
+}

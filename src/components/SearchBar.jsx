@@ -2,10 +2,10 @@ import React from "react";
 import Search from "./Search";
 import Autocomplete from "./Autocomplete";
 
-function SearchBar() {
+function SearchBar({ searchValue, setSearchValue }) {
   return (
     <>
-      <Search />
+      <Search searchValue={searchValue} setSearchValue={setSearchValue} />
       <Autocomplete />
     </>
   );

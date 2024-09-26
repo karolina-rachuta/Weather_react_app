@@ -4,6 +4,7 @@
 - szukanie po geolokalizacji
 - fetch/axios API - pobieranie danych
 
+
 ## Analiza zadania:
 
 1. single-page app
