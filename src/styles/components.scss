@@ -5,7 +5,7 @@
         color: rgba(255, 255, 255, 0.7);
         background-color: rgb(0, 30, 60);
         position: absolute;
-        top: toRem(20px);
+        top: toRem(17px);
         left: toRem(20px);
         font-size: toRem(16px);
         transition: all 400ms;
@@ -16,7 +16,7 @@
     &.focus {
         .search__lbl {
             font-size: toRem(8px);
-            top: toRem(4px);
+            top: toRem(6px);
         }
     }
 
@@ -26,5 +26,6 @@
         border: toRem(1px) solid rgba(255, 255, 255, 0.23);
         background-color: rgb(0, 30, 60);
         margin: toRem(10px);
+        color: rgba(255, 255, 255, 0.9);
     }
 }

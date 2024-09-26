@@ -7,12 +7,18 @@ function Search({ searchValue, setSearchValue }) {
     setSearchValue(e.target.value);
   }
 
-  function handleFocus(e) {
+  function handleFocus() {
     searchRef.current.classList.add("focus");
   }
 
+  function handleBlur() {
+    if(searchValue === "") {
+        searchRef.current.classList.remove("focus");
+    }
+  }
+
   return (
-    <div className="search" ref={searchRef} onFocus={handleFocus}>
+    <div className="search" ref={searchRef}>
       <label className="search__lbl" htmlFor="search">
         Type city
       </label>
@@ -22,6 +28,8 @@ function Search({ searchValue, setSearchValue }) {
         value={searchValue}
         id="search"
         onChange={handleInput}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
       />
       <button>Search</button>
     </div>
