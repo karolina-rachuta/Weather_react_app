@@ -8,9 +8,12 @@ import './styles/main.scss';
 function App() {
   const [searchValue, setSearchValue] = useState("");
 
+  function handleSearch() {
+    setSearchValue("");
+  }
   return (
     <main className="App">
-      <SearchBar searchValue={searchValue} setSearchValue={setSearchValue}/>
+      <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} handleSearch={handleSearch}/>
       <Weather/>
       <WeatherForecastChart/>
     </main>

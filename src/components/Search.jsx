@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-function Search({ searchValue, setSearchValue }) {
+function Search({ searchValue, setSearchValue, handleSearch }) {
   const searchRef = useRef(null);
 
   function handleInput(e) {
@@ -12,8 +12,8 @@ function Search({ searchValue, setSearchValue }) {
   }
 
   function handleBlur() {
-    if(searchValue === "") {
-        searchRef.current.classList.remove("focus");
+    if (searchValue === "") {
+      searchRef.current.classList.remove("focus");
     }
   }
 
@@ -31,7 +31,7 @@ function Search({ searchValue, setSearchValue }) {
         onFocus={handleFocus}
         onBlur={handleBlur}
       />
-      <button>Search</button>
+      <button className="search__btn" onClick={handleSearch}>Search</button>
     </div>
   );
 }
