@@ -3,6 +3,9 @@
 - get the weather for the searched town
 - szukanie po geolokalizacji
 - fetch/axios API - pobieranie danych
+- obsluga bledow w api.js
+- autocomplete
+- styling
 
 
 ## Analiza zadania:
@@ -29,3 +32,6 @@ npm i sass@1.79.3 -D
 ```
 ## Weather API
 https://www.weatherapi.com/
+
+## Demo:
+https://weather-app-14bef.web.app/

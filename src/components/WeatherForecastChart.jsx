@@ -14,7 +14,6 @@ function WeatherForecastChart({ forecastWeather }) {
 
   function formatterXAxisLabel(value) {
     const date = new Date(value);
-    console.log(forecastWeather.map(({ day: { maxtemp_c } }) => maxtemp_c));
     return `${date.getUTCDate()}/${date.getUTCMonth() + 1}`;
   }
 
