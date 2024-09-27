@@ -2,10 +2,10 @@ import React from "react";
 import ReactECharts from "echarts-for-react";
 
 function WeatherForecastChart({ forecastWeather }) {
-  function formatterXAxisLabel(value, index) {
+  function formatterXAxisLabel(value) {
     const date = new Date(value);
     console.log(forecastWeather.map(({ day: { maxtemp_c } }) => maxtemp_c));
-    return `${date.getUTCDate()} / ${date.getUTCMonth() + 1}`;
+    return `${date.getUTCDate()}/${date.getUTCMonth() + 1}`;
   }
 
   const maxTemperatureData = forecastWeather.map(
@@ -20,7 +20,7 @@ function WeatherForecastChart({ forecastWeather }) {
     ({ day: { totalprecip_mm } }) => totalprecip_mm
   );
   return (
-    <div>
+    <section className="chart__box">
       <ReactECharts
         option={{
           legend: {
@@ -28,7 +28,7 @@ function WeatherForecastChart({ forecastWeather }) {
             right: "10%",
             bottom: "centre",
             textStyle: {
-              fontSize: 14,
+              fontSize: 12,
               color: "white",
             },
           },
@@ -62,7 +62,9 @@ function WeatherForecastChart({ forecastWeather }) {
               },
               splitLine: {
                 show: false,
-              }
+              },
+              position: "left",
+              offset: 20,
             },
             {
               type: "value",
@@ -80,15 +82,24 @@ function WeatherForecastChart({ forecastWeather }) {
               },
               splitLine: {
                 show: false,
-              }
+              },
+              position: "right",
+              offset: 20,
             },
           ],
           series: [
             {
               name: "Max_Temperature",
               data: maxTemperatureData,
-              type: "bar",
-              barWidth: "20%",
+              type: "line",
+              smooth: true,
+              lineStyle: {
+                color: "red",
+                width: 2,
+              },
+              itemStyle: {
+                color: "red",
+              },
               tooltip: {
                 valueFormatter: function (value) {
                   return value + " °C";
@@ -99,14 +110,25 @@ function WeatherForecastChart({ forecastWeather }) {
             {
               name: "Min_Temperature",
               data: minTemperatureData,
-              type: "bar",
-              barWidth: "20%",
+              type: "line",
+              smooth: true,
+              lineStyle: {
+                color: "lightblue",
+                width: 2,
+              },
+              itemStyle: {
+                color: "lightblue",
+              },
               yAxisIndex: 0,
             },
             {
               name: "Precipitation",
               data: precipitationData,
-              type: "line",
+              type: "bar",
+              barWidth: "10%",
+              itemStyle: {
+                color: "blue",
+              },
               tooltip: {
                 valueFormatter: function (value) {
                   return value + " mm";
@@ -117,7 +139,7 @@ function WeatherForecastChart({ forecastWeather }) {
           ],
         }}
       />
-    </div>
+    </section>
   );
 }
 
