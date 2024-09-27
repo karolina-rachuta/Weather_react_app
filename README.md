@@ -27,5 +27,5 @@ https://github.com/apache/echarts
 npm view sass
 npm i sass@1.79.3 -D
 ```
-## API
-https://openweathermap.org/api
+## Weather API
+https://www.weatherapi.com/
