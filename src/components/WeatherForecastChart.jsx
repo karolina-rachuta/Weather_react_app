@@ -1,24 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactECharts from "echarts-for-react";
 
 function WeatherForecastChart({ forecastWeather }) {
+  const [maxTemp] = useState(
+    forecastWeather.map(({ day: { maxtemp_c } }) => maxtemp_c)
+  );
+  const [minTemp] = useState(
+    forecastWeather.map(({ day: { mintemp_c } }) => mintemp_c)
+  );
+  const [precip] = useState(
+    forecastWeather.map(({ day: { totalprecip_mm } }) => totalprecip_mm)
+  );
+
   function formatterXAxisLabel(value) {
     const date = new Date(value);
     console.log(forecastWeather.map(({ day: { maxtemp_c } }) => maxtemp_c));
     return `${date.getUTCDate()}/${date.getUTCMonth() + 1}`;
   }
 
-  const maxTemperatureData = forecastWeather.map(
-    ({ day: { maxtemp_c } }) => maxtemp_c
-  );
-
-  const minTemperatureData = forecastWeather.map(
-    ({ day: { mintemp_c } }) => mintemp_c
-  );
-
-  const precipitationData = forecastWeather.map(
-    ({ day: { totalprecip_mm } }) => totalprecip_mm
-  );
   return (
     <section className="chart__box">
       <ReactECharts
@@ -49,8 +48,7 @@ function WeatherForecastChart({ forecastWeather }) {
             {
               type: "value",
               name: "Temperature",
-              min: 0,
-              max: Math.round(Math.max(...maxTemperatureData) * 1.1),
+              max: Math.round(Math.max(...maxTemp) * 1.1),
               interval: 5,
               axisLabel: {
                 formatter: "{value} °C",
@@ -73,8 +71,8 @@ function WeatherForecastChart({ forecastWeather }) {
                 color: "white",
               },
               min: 0,
-              max: Math.round(Math.max(...precipitationData) * 1.3),
-              interval: 1,
+              max: Math.round(Math.max(...precip) * 1.3),
+              interval: 2,
               axisLabel: {
                 formatter: "{value} mm",
                 fontSize: 12,
@@ -90,7 +88,7 @@ function WeatherForecastChart({ forecastWeather }) {
           series: [
             {
               name: "Max_Temperature",
-              data: maxTemperatureData,
+              data: maxTemp,
               type: "line",
               smooth: true,
               lineStyle: {
@@ -109,7 +107,7 @@ function WeatherForecastChart({ forecastWeather }) {
             },
             {
               name: "Min_Temperature",
-              data: minTemperatureData,
+              data: minTemp,
               type: "line",
               smooth: true,
               lineStyle: {
@@ -123,7 +121,7 @@ function WeatherForecastChart({ forecastWeather }) {
             },
             {
               name: "Precipitation",
-              data: precipitationData,
+              data: precip,
               type: "bar",
               barWidth: "10%",
               itemStyle: {
