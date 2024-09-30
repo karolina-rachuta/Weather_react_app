@@ -1,4 +1,3 @@
-// const url = `http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=${city}n&days=10&aqi=no&alerts=no`
 const BASE_URL = 'https://api.weatherapi.com/v1/forecast.json';
 export async function getWeather(city) {
 

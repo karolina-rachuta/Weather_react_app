@@ -1,4 +1,9 @@
 # Weather API
+React Weather single page application.
+2h01
+## Functionalities
+- weather forecast for given city (temperature, rain, humidity, air quality, wind direction, wind speed) for today
+- weather chart for 10 dats for given city (temerature max and min and precipitaion)
 
 - get the weather for the searched town
 - szukanie po geolokalizacji

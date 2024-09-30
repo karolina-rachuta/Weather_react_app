@@ -24,10 +24,10 @@ function Weather({
       <p>Temperature [C]: {temp_c}</p>
       <p>Feelslike temperature [C]: {feelslike_c}</p>
       <p>Rain [mm]: {precip_mm}</p>
-      <p>Humidity: {humidity}</p>
+      <p>Humidity [%]: {humidity}</p>
       <p>Air Quality: {air_quality.pm2_5}</p>
       <p>Wind Direction: {wind_dir}</p>
-      <p>Wind Direction [kph]: {wind_kph}</p>
+      <p>Wind Speed [kph]: {wind_kph}</p>
       <p>UV: {uv}</p>
     </div>
   );
