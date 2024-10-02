@@ -1,16 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactECharts from "echarts-for-react";
 
 function WeatherForecastChart({ forecastWeather }) {
-  const [maxTemp] = useState(
+  const [maxTemp, setMaxTemp] = useState(
     forecastWeather.map(({ day: { maxtemp_c } }) => maxtemp_c)
   );
-  const [minTemp] = useState(
+  const [minTemp, setMinTemp] = useState(
     forecastWeather.map(({ day: { mintemp_c } }) => mintemp_c)
   );
-  const [precip] = useState(
+  const [precip, setPrecip] = useState(
     forecastWeather.map(({ day: { totalprecip_mm } }) => totalprecip_mm)
   );
+
+  useEffect(() => {
+    setMaxTemp(forecastWeather.map(({ day: { maxtemp_c } }) => maxtemp_c));
+    setMinTemp(forecastWeather.map(({ day: { mintemp_c } }) => mintemp_c));
+    setPrecip(forecastWeather.map(({ day: { totalprecip_mm } }) => totalprecip_mm));
+  }, [forecastWeather]);
 
   function formatterXAxisLabel(value) {
     const date = new Date(value);
@@ -60,15 +66,15 @@ function WeatherForecastChart({ forecastWeather }) {
               splitLine: {
                 show: true,
                 lineStyle: {
-                  color: '#ffffff',
+                  color: "#ffffff",
                   width: 0.1,
-                  type: 'solid' // Typ linii (możesz zmienić na 'dashed' lub inny)
-                }
+                  type: "solid", // Typ linii (możesz zmienić na 'dashed' lub inny)
+                },
               },
               position: "left",
               offset: 0,
             },
-            
+
             {
               type: "value",
               name: "Rain, mm",
