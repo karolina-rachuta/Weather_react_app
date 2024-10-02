@@ -19,14 +19,17 @@ https://weather-app-14bef.web.app/
 
 - React Js
 - Rest API
-- Eslint
 - SCSS
+- Firebase (deploy)
 
 ## Weather API
 https://www.weatherapi.com/
 
 ## Screenshot:
-- Dektop
+- Desktop
+
 ![screenshots](src/assets/pic1.png)
+
 - Mobile
+
 ![screenshots](src/assets/pic2.png)
