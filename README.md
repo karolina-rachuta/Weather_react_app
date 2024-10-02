@@ -33,3 +33,6 @@ https://www.weatherapi.com/
 - Mobile
 
 ![screenshots](src/assets/pic2.png)
+
+## MIT License:
+Copyright &copy; 2024 Karolina Rachuta. All rights reserved.
