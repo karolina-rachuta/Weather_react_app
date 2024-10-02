@@ -9,7 +9,11 @@ export async function getWeather(city) {
         alerts: 'no'
     }
 
-    const response = await fetch(`${BASE_URL}?${new URLSearchParams(config)}`);
+
+    const response = await fetch(`${BASE_URL}?${new URLSearchParams(config)}`)
+    .catch((error) => {
+        console.log(error);
+    });
     const data = await response.json();
     return data;
 }
