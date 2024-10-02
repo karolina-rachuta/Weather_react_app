@@ -1,5 +1,28 @@
+.navbar {
+    width: 100%;
+    border-bottom: toRem(1px) solid #fff;
+    box-sizing: border-box;
+
+    &__hdl {
+        text-transform: uppercase;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        color: #fff;
+        margin: 0;
+    }
+}
+
 .search {
     position: relative;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: toRem(11px);
+
+    &__wrapper {
+        position: relative;
+    }
 
     &__lbl {
         color: rgba(255, 255, 255, 0.7);
@@ -10,13 +33,17 @@
         font-size: toRem(16px);
         transition: all 400ms;
         padding: toRem(2px) toRem(6px);
+        font-family: 'Roboto', sans-serif;
+        font-weight: 100;
     }
 
     &:hover,
     &.focus {
         .search__lbl {
             font-size: toRem(8px);
-            top: toRem(6px);
+            top: toRem(4px);
+            border-radius: toRem(2px);
+            background-color: rgb(0, 30, 60);
         }
     }
 
@@ -26,10 +53,55 @@
         border: toRem(1px) solid rgba(255, 255, 255, 0.23);
         background-color: rgb(0, 30, 60);
         margin: toRem(10px);
+        margin-left: 0;
         color: rgba(255, 255, 255, 0.9);
+        font-weight: 500;
+        outline: toRem(2px) rgba(255, 255, 255, 0.9);
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+    }
+
+    &__btn {
+        padding: toRem(9px);
+        border-radius: toRem(4px);
+        border: toRem(1px) solid rgba(255, 255, 255, 0.23);
+        background-color: rgb(0, 30, 60);
+        color: rgba(255, 255, 255, 0.9);
+
+        &:hover {
+            background-color: rgb(114, 114, 114);
+            transition: all 200ms;
+        }
     }
 }
 
+.weather-summary {
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+
+    &__hdl {
+        font-weight: 300;
+    }
+
+    &__details {}
+}
+
 .chart__box {
-    width: 100%; 
+    width: 100%;
+    // max-width: toRem(1200px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // padding-right: toRem(20px);
+    // padding-left: toRem(20px);
+    box-sizing: border-box;
+    margin: auto;
+    margin-top: 50px;
+
+    &>div {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
 }

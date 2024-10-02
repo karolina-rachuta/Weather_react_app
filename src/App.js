@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
+import Header from "./components/Header";
 import SearchBar from './components/SearchBar';
 import Weather from './components/Weather';
 import WeatherForecastChart from './components/WeatherForecastChart';
@@ -11,6 +12,11 @@ function App() {
   const [searchValue, setSearchValue] = useState("");
   const [weatherData, setWeatherData] = useState({});
 
+  // useEffect(() => {
+  //   getWeather()
+  //     .catch((err) => console.error(err))
+  //   },  [handleSearch])
+
   async function handleSearch() {
     // nigdy nie dawac danych z inputa do URL!!
     const data = await getWeather(searchValue);
@@ -19,6 +25,7 @@ function App() {
   }
   return (
     <main className="App">
+      <Header />
       <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} handleSearch={handleSearch}/>
      {!!Object.keys(weatherData).length && (
       <>

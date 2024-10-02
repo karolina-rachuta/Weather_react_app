@@ -22,11 +22,11 @@ function WeatherForecastChart({ forecastWeather }) {
       <ReactECharts
         option={{
           legend: {
-            data: ["Max_Temperature", "Min_Temperature", "Precipitation"],
-            right: "10%",
-            bottom: "centre",
+            data: ["Max_Temp", "Min_Temp", "Rain"],
+            left: "center",
+            top: "0%",
             textStyle: {
-              fontSize: 12,
+              fontSize: 10,
               color: "white",
             },
           },
@@ -46,11 +46,11 @@ function WeatherForecastChart({ forecastWeather }) {
           yAxis: [
             {
               type: "value",
-              name: "Temperature",
+              name: "Temp, °C",
               max: Math.round(Math.max(...maxTemp) * 1.1),
               interval: 5,
               axisLabel: {
-                formatter: "{value} °C",
+                // formatter: "{value} °C",
                 fontSize: 12,
                 color: "white",
               },
@@ -58,14 +58,20 @@ function WeatherForecastChart({ forecastWeather }) {
                 color: "white",
               },
               splitLine: {
-                show: false,
+                show: true,
+                lineStyle: {
+                  color: '#ffffff',
+                  width: 0.1,
+                  type: 'solid' // Typ linii (możesz zmienić na 'dashed' lub inny)
+                }
               },
               position: "left",
-              offset: 20,
+              offset: 0,
             },
+            
             {
               type: "value",
-              name: "Precipitation",
+              name: "Rain, mm",
               nameTextStyle: {
                 color: "white",
               },
@@ -73,7 +79,7 @@ function WeatherForecastChart({ forecastWeather }) {
               max: Math.round(Math.max(...precip) * 1.3),
               interval: 2,
               axisLabel: {
-                formatter: "{value} mm",
+                // formatter: "{value} mm",
                 fontSize: 12,
                 color: "white",
               },
@@ -81,12 +87,12 @@ function WeatherForecastChart({ forecastWeather }) {
                 show: false,
               },
               position: "right",
-              offset: 20,
+              offset: 0,
             },
           ],
           series: [
             {
-              name: "Max_Temperature",
+              name: "Max_Temp",
               data: maxTemp,
               type: "line",
               smooth: true,
@@ -97,15 +103,15 @@ function WeatherForecastChart({ forecastWeather }) {
               itemStyle: {
                 color: "red",
               },
-              tooltip: {
-                valueFormatter: function (value) {
-                  return value + " °C";
-                },
-              },
+              // tooltip: {
+              //   valueFormatter: function (value) {
+              //     return value + " °C";
+              //   },
+              // },
               yAxisIndex: 0,
             },
             {
-              name: "Min_Temperature",
+              name: "Min_Temp",
               data: minTemp,
               type: "line",
               smooth: true,
@@ -119,18 +125,18 @@ function WeatherForecastChart({ forecastWeather }) {
               yAxisIndex: 0,
             },
             {
-              name: "Precipitation",
+              name: "Rain",
               data: precip,
               type: "bar",
               barWidth: "10%",
               itemStyle: {
                 color: "blue",
               },
-              tooltip: {
-                valueFormatter: function (value) {
-                  return value + " mm";
-                },
-              },
+              // tooltip: {
+              //   valueFormatter: function (value) {
+              //     return value + " mm";
+              //   },
+              // },
               yAxisIndex: 1,
             },
           ],

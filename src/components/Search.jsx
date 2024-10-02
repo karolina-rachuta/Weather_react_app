@@ -19,19 +19,23 @@ function Search({ searchValue, setSearchValue, handleSearch }) {
 
   return (
     <div className="search" ref={searchRef}>
-      <label className="search__lbl" htmlFor="search">
-        Type city
-      </label>
-      <input
-        className="search__input"
-        type="text"
-        value={searchValue}
-        id="search"
-        onChange={handleInput}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-      />
-      <button className="search__btn" onClick={handleSearch}>Search</button>
+      <div className="search__wrapper">
+        <label className="search__lbl" htmlFor="search">
+          Type city
+        </label>
+        <input
+          className="search__input"
+          type="text"
+          value={searchValue}
+          id="search"
+          onChange={handleInput}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+        />
+      </div>
+      <button className="search__btn" onClick={handleSearch}>
+        Search
+      </button>
     </div>
   );
 }
