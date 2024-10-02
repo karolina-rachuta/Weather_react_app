@@ -17,5 +17,3 @@ export async function getWeather(city) {
     const data = await response.json();
     return data;
 }
-
-//TODO status code

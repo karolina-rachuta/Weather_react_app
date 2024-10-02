@@ -56,7 +56,6 @@ function WeatherForecastChart({ forecastWeather }) {
               max: Math.round(Math.max(...maxTemp) * 1.1),
               interval: 5,
               axisLabel: {
-                // formatter: "{value} °C",
                 fontSize: 12,
                 color: "white",
               },
@@ -68,7 +67,7 @@ function WeatherForecastChart({ forecastWeather }) {
                 lineStyle: {
                   color: "#ffffff",
                   width: 0.1,
-                  type: "solid", // Typ linii (możesz zmienić na 'dashed' lub inny)
+                  type: "solid",
                 },
               },
               position: "left",
@@ -85,7 +84,6 @@ function WeatherForecastChart({ forecastWeather }) {
               max: Math.round(Math.max(...precip) * 1.3),
               interval: 2,
               axisLabel: {
-                // formatter: "{value} mm",
                 fontSize: 12,
                 color: "white",
               },
@@ -109,11 +107,6 @@ function WeatherForecastChart({ forecastWeather }) {
               itemStyle: {
                 color: "red",
               },
-              // tooltip: {
-              //   valueFormatter: function (value) {
-              //     return value + " °C";
-              //   },
-              // },
               yAxisIndex: 0,
             },
             {
@@ -138,11 +131,6 @@ function WeatherForecastChart({ forecastWeather }) {
               itemStyle: {
                 color: "blue",
               },
-              // tooltip: {
-              //   valueFormatter: function (value) {
-              //     return value + " mm";
-              //   },
-              // },
               yAxisIndex: 1,
             },
           ],

@@ -1,3 +1,11 @@
+.error_message {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: toRem(12px);
+    color: #fff;
+    margin: auto;
+}
+
 .navbar {
     width: 100%;
     border-bottom: toRem(1px) solid #fff;
@@ -80,22 +88,55 @@
     color: rgba(255, 255, 255, 0.9);
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: toRem(50px);
+    margin-top: toRem(50px);
+    width: 100%;
+    padding: toRem(20px);
 
-    &__hdl {
-        font-weight: 300;
+    &__main-container {
+        display: flex;
+        align-items: start;
+        gap: toRem(50px);
     }
 
-    &__details {}
+    @media only screen and (max-width: toRem(450px)) {
+        flex-direction: column;
+        align-items: center;
+        padding: toRem(10px);
+        border: toRem(1px) solid rgba(255, 255, 255, 0.9);
+        border-radius: toRem(10px);
+        box-shadow: 2px 2px 5px 0px rgba(224, 224, 224, 0.2);
+    }
+
+    &__hdl {
+        font-weight: 900;
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-weight: 900;
+
+    }
+
+    &__details {
+        p {
+            padding-bottom: toRem(12px);
+            font-weight: 900;
+        }
+
+    }
 }
 
 .chart__box {
     width: 100%;
-    // max-width: toRem(1200px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    // padding-right: toRem(20px);
-    // padding-left: toRem(20px);
     box-sizing: border-box;
     margin: auto;
     margin-top: 50px;
@@ -104,5 +145,4 @@
         width: 100%;
         box-sizing: border-box;
     }
-    
 }
