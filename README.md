@@ -9,18 +9,12 @@ React Weather single page application.
 https://weather-app-14bef.web.app/
 
 ## Tech stack:
-- React Js
-- Rest API
-- Eslint
-- SCSS
-- Echarts Apache (https://github.com/apache/echarts)
-
-## Tech stack:
 
 - React Js
 - Rest API
 - SCSS
 - Firebase (deploy)
+- Echarts Apache (https://github.com/apache/echarts)
 
 ## Weather API
 https://www.weatherapi.com/
