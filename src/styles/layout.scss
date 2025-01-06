@@ -19,4 +19,9 @@
         padding-left: toRem(32px);
         padding-right: toRem(32px);
     }
+
+    @media only screen and (max-width: toRem(600px)) {
+        padding-left: toRem(10px);
+        padding-right: toRem(10px);
+    }
 }

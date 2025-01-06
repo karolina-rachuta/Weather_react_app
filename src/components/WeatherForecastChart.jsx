@@ -34,7 +34,7 @@ function WeatherForecastChart({ forecastWeather }) {
                         left: 'center',
                         top: '0%',
                         textStyle: {
-                            fontSize: 10,
+                            fontSize: 14,
                             color: 'white',
                         },
                     },
@@ -44,7 +44,7 @@ function WeatherForecastChart({ forecastWeather }) {
                         data: forecastWeather.map(({ date }) => date),
                         axisLabel: {
                             formatter: formatterXAxisLabel,
-                            fontSize: 12,
+                            fontSize: 14,
                             color: 'white',
                         },
                         axisLine: {
@@ -64,11 +64,12 @@ function WeatherForecastChart({ forecastWeather }) {
                             max: Math.round(Math.max(...maxTemp) * 1.1),
                             interval: 5,
                             axisLabel: {
-                                fontSize: 12,
+                                fontSize: 14,
                                 color: 'white',
                             },
                             nameTextStyle: {
                                 color: 'white',
+                                fontSize: 14,
                             },
                             splitLine: {
                                 show: true,
@@ -87,12 +88,13 @@ function WeatherForecastChart({ forecastWeather }) {
                             name: 'Rain, mm',
                             nameTextStyle: {
                                 color: 'white',
+                                fontSize: 14,
                             },
                             min: 0,
                             max: Math.round(Math.max(...precip) * 1.3),
                             interval: 2,
                             axisLabel: {
-                                fontSize: 12,
+                                fontSize: 14,
                                 color: 'white',
                             },
                             splitLine: {
